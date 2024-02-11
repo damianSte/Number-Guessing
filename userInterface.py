@@ -44,7 +44,7 @@ class UserInterface(App):
 
         user_guess = int(self.user.text)
 
-        random_number = math.floor(random.random() * 100+1)
+        random_number = math.floor(random.random() * 100)
 
         if user_guess == random_number:
             self.title_label.text = "You guessed right!"
@@ -56,6 +56,7 @@ class UserInterface(App):
             self.title_label.text = "Your guess is too low!"
             self.prize_sum -= 10
 
+        self.user.text = " "
         self.prize_label.text = str(self.prize_sum)
         self.result_label.text = f"The number was {random_number}"
 
